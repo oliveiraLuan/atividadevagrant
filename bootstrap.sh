@@ -8,13 +8,13 @@ DBPASSWD=userpass
 apt-get update
 apt-get install vim curl build-essential python-software-properties git
 
-debconf-set-selections &lt;&lt;&lt; "mysql-server mysql-server/root_password password $DBPASSWD"
-debconf-set-selections &lt;&lt;&lt; "mysql-server mysql-server/root_password_again password $DBPASSWD"
-debconf-set-selections &lt;&lt;&lt; "phpmyadmin phpmyadmin/dbconfig-install boolean true"
-debconf-set-selections &lt;&lt;&lt; "phpmyadmin phpmyadmin/app-password-confirm password $DBPASSWD"
-debconf-set-selections &lt;&lt;&lt; "phpmyadmin phpmyadmin/mysql/admin-pass password $DBPASSWD"
-debconf-set-selections &lt;&lt;&lt; "phpmyadmin phpmyadmin/mysql/app-pass password $DBPASSWD"
-debconf-set-selections &lt;&lt;&lt; "phpmyadmin phpmyadmin/reconfigure-webserver multiselect none"
+debconf-set-selections <<< "mysql-server mysql-server/root_password password $DBPASSWD"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password $DBPASSWD"
+debconf-set-selections <<< "phpmyadmin phpmyadmin/dbconfig-install boolean true"
+debconf-set-selections <<< "phpmyadmin phpmyadmin/app-password-confirm password $DBPASSWD"
+debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/admin-pass password $DBPASSWD"
+debconf-set-selections <<< "phpmyadmin phpmyadmin/mysql/app-pass password $DBPASSWD"
+debconf-set-selections <<< "phpmyadmin phpmyadmin/reconfigure-webserver multiselect none"
 
 # install mysql and admin interface
 
